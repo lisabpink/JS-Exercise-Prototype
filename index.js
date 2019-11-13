@@ -94,8 +94,12 @@ Car.prototype.fill = function(gallons){
 function Baby(name, age, favoriteToy) {
   Person.call(this, name, age, favoriteToy);
   this.favoriteToy = favoriteToy;
- 
+}
 
+Baby.prototype = Object.create(Person.prototype);
+
+Baby.prototype.play = function(){
+  return `Playing with ${this.favoriteToy}`;
 }
 
 /* 
